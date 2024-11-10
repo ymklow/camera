@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Camera</title>
+</head>
+<body>
+    <h2>Camera Access Example</h2>
+    <button onclick="openCamera()">Open Camera</button>
+    <video id="cameraStream" autoplay playsinline></video>
+    <script>
+        async function openCamera() {
+            try {
+                const videoElement = document.getElementById("cameraStream");
+                const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                videoElement.srcObject = stream;
+            } catch (error) {
+                alert("Camera access denied or not available.");
+                console.error("Error accessing camera: ", error);
+            }
+        }
+    </script>
+</body>
+</html>
