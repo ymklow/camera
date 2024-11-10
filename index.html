@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera Access with Visit Logging</title>
-    <!-- Firebase JS SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    <!-- Firebase App (base) -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
     <h2>Camera Access and Visit Logger</h2>
@@ -17,16 +18,15 @@
         // Firebase configuration (replace with your own)
         const firebaseConfig = {
             apiKey: "AIzaSyBbDQInuYr5vsiSm8dorPOW8v1N1WlUx1E",
-    authDomain: "camera-23928.firebaseapp.com",
-    projectId: "camera-23928",
-    storageBucket: "camera-23928.firebasestorage.app",
-    messagingSenderId: "1075362231105",
-    appId: "1:1075362231105:web:d600f7cfbf05532c71e7c0",
-    measurementId: "G-EXG99DFS98"
+            authDomain: "camera-23928.firebaseapp.com",
+            projectId: "camera-23928",
+            storageBucket: "camera-23928.firebasestorage.app",
+            messagingSenderId: "1075362231105",
+            appId: "1:1075362231105:web:d600f7cfbf05532c71e7c0",
         };
 
         // Initialize Firebase and Firestore
-        const app = firebase.initializeApp(firebaseConfig);
+        firebase.initializeApp(firebaseConfig);
         const db = firebase.firestore();
 
         // Function to log device data
